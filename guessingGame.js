@@ -6,7 +6,7 @@ const generateTarget = () => {
   return Math.floor(Math.random() * 10);
 }
 
-//Math.abs means absolute number
+//Math.abs means absolute number. 3 - 5 = 2
 const compareGuesses = (humanGuess, computerGuess, targetGuess) => {
   const humanDifference = Math.abs(targetGuess - humanGuess)
   const computerDifference = Math.abs(targetGuess - computerGuess)
