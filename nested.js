@@ -10,6 +10,9 @@ for (let i = 0; i < bobsFollowers.length; i++) {
     }
   }
 };
+<<<<<<< HEAD
 
 
 bobsFollowers.find('Mike');
+=======
+>>>>>>> 442a81a2996e035e5b14c83bc5e0482cba2b406b
