@@ -15,3 +15,4 @@ let total = [ 0, 1, 2, 3 ].reduce(
   )
 
 console.log(total);
+
