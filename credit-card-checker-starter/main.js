@@ -22,34 +22,43 @@ const mystery5 = [4, 9, 1, 3, 5, 4, 0, 4, 6, 3, 0, 7, 2, 5, 2, 3]
 // An array of all the arrays above
 const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, invalid3, invalid4, invalid5, mystery1, mystery2, mystery3, mystery4, mystery5]
 
+for (let h = 0; h < batch.length; h++) {
 
-checkCopy = [];
-for (i = 0; i < valid1.length; i++) {
-    checkCopy[i] = valid1[i];
-}
+        const cardNumber = batch[h];
 
-console.log(checkCopy);
+        //console.log(cardNumber);
+
+        checkCopy = [];
+        for (i = 0; i < cardNumber.length; i++) {
+            checkCopy[i] = cardNumber[i];
+        }
+
+        //console.log(checkCopy);
 
 
-for (let j = checkCopy.length - 2; j >= 0; j -=2) {
-    checkCopy[j] = checkCopy[j] * 2;
-    console.log(checkCopy[j]);
-    if (checkCopy[j] > 9) {
-        checkCopy[j] = checkCopy[j] - 9;
-    console.log(checkCopy[j]);
-    }
-}
+        for (let j = checkCopy.length - 2; j >= 0; j -=2) {
+            checkCopy[j] = checkCopy[j] * 2;
+        //    console.log(checkCopy[j]);
+            if (checkCopy[j] > 9) {
+                checkCopy[j] = checkCopy[j] - 9;
+        //   console.log(checkCopy[j]);
+            }
+        }
 
-console.log(checkCopy);
+        //console.log(checkCopy);
 
-let total = checkCopy.reduce(
-    (accumulator, currentValue ) => accumulator + currentValue, 0
-)
+        let total = checkCopy.reduce(
+            (accumulator, currentValue ) => accumulator + currentValue, 0
+        )
+        console.log(batch.keys(batch[h]));
+        console.log(total);
 
-console.log(total);
+        if (total % 10 == 0) {
+            console.log(true);
+        } else {
+            console.log(false);
+        }
 
-if (total % 10 == 0) {
-    console.log(true);
 }
 
 
