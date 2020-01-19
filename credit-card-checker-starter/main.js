@@ -50,7 +50,6 @@ for (let h = 0; h < batch.length; h++) {
         let total = checkCopy.reduce(
             (accumulator, currentValue ) => accumulator + currentValue, 0
         )
-        console.log(batch.keys(batch[h]));
         console.log(total);
 
         if (total % 10 == 0) {
