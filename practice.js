@@ -1,32 +1,58 @@
-let spaceship = {
-  crew: {
-  captain: { 
-      name: 'Lily', 
-      degree: 'Computer Engineering', 
-      cheerTeam() { console.log('You got this!') } 
-      },
-  'chief officer': { 
-      name: 'Dan', 
-      degree: 'Aerospace Engineering', 
-      agree() { console.log('I agree, captain!') } 
-      },
-  medic: { 
-      name: 'Clementine', 
-      degree: 'Physics', 
-      announce() { console.log(`Jets on!`) } },
-  translator: {
-      name: 'Shauna', 
-      degree: 'Conservation Science', 
-      powerFuel() { console.log('The tank is full!') } 
-      }
+const menu = {
+  _courses: {
+    appetizers: [],
+    mains: [],
+    desserts: [],
+  },
+    get appetizers() {
+       return this._courses.appetizers;
+    },
+    get mains() {
+       return this._courses.mains;
+    },
+    get desserts() {
+       return this._courses.desserts;
+    },
+    set appetizers(appetizers) {
+      this._courses.appetizers = appetizers;
+    },
+    set mains(mains) {
+      this._courses.mains = mains;
+    },
+    set desserts(desserts) {
+      this._courses.desserts = desserts;
+    },
+    get courses()   {
+    return {
+      appetizers: this.appetizers, 
+      mains: this.mains,
+      desserts: this.desserts
+          };
+    },  
+  addDishToCourse (courseName, dishName, dishPrice) {
+  const dish = {
+    name: dishName,
+    price: dishPrice,
+  };
+   return this._courses[courseName].push(dish);  
+  },
+  getRandomDishFromCourse (courseName) {
+   const dishes = this._courses[courseName];
+   const randomIndex = Math.floor(Math.random()*dishes.length);
+    return dishes[randomIndex];
+ },
+  generateRandomMeal() {
+    const appetizer = this.getRandomDishFromCourse('appetizers');
+    const main =
+this.getRandomDishFromCourse('mains');
+    const dessert =
+this.getRandomDishFromCourse('desserts');
+    const totalPrice = appetizer.price + main.price + desserts.price;
+    return `Your meal is ${appetizer.name}, ${main.name}, ${desserts.name}. The prices is $${totalPrice}.`;
   }
-}; 
-
-// Write your code below
-for (let sCrew in spaceship.crew) {
-console.log(`${sCrew}: ${spaceship.crew[sCrew].name}`)
-}
-
-for (let cDegree in spaceship.crew) {
-console.log(`${spaceship.crew[cDegree].name}: ${spaceship.crew[cDegree].degree}`)
 };
+
+menu.addDishToCourse('main', 'Spag Bol', 1.00);
+
+const meal = menu.generateRandomMeal();
+console.log(meal);
