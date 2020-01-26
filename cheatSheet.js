@@ -311,4 +311,71 @@ const robotFactory = (model, mobile) => {
   
   tinCan.beep();
   
+
+  //Property Value Shorthand
+  const monsterFactory1 = (name, age) => {
+    return { 
+      name,
+      age 
+    }
+  };
+
+  function robotFactory1(model, mobile){
+    return {
+      model: model,
+      mobile: mobile,
+      beep() {
+        console.log('Beep Boop');
+      }
+    }
+  }
+  
+  // To check that the property value shorthand technique worked:
+  const newRobot = robotFactory1('P-501', false)
+  console.log(newRobot.model)
+  console.log(newRobot.mobile)
+  
+//Becomes:
+
+function robotFactory2(model, mobile){
+    return {
+      model,
+      mobile,
+      beep() {
+        console.log('Beep Boop');
+      }
+    }
+  }
+  
+  // To check that the property value shorthand technique worked:
+  const newRobot1 = robotFactory2('P-501', false)
+  console.log(newRobot1.model)
+  console.log(newRobot1.mobile)
+  
+
+  //Destructured Assignment
+  const vampire = {
+    name: 'Dracula',
+    residence: 'Transylvania',
+    preferences: {
+      day: 'stay inside',
+      night: 'satisfy appetite'
+    }
+  };
+  
+  const residence = vampire.residence; 
+  console.log(residence); // Prints 'Transylvania' 
+
+  //or use:
+  const { residence1 } = vampire; 
+console.log(residence); // Prints 'Transylvania'
+
+const { day } = vampire.preferences; 
+console.log(day); // Prints 'stay inside'
+
+console.log(vampire);
+
+
+  
+  
   
