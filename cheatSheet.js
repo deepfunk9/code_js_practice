@@ -28,7 +28,7 @@ const object4 = {
 console.log(objectName);
 //Prints { key1: 'value1', key2: 'value2' }
 
-//console.log(objectName[0];
+//console.log(objectName[0]);
 //Prints undefined
 
 //console.log(objectName(0));
@@ -49,7 +49,9 @@ console.log(object3.key5[0]);
 console.log(objectName['key1']);
 //value1
 
-const spaceship = {type: 'shuttle'};
+const spaceship = {
+  type: 'shuttle'
+};
 //spaceship = {type: 'alien'}; // TypeError: Assignment to constant variable.
 spaceship.type = 'alien'; // Changes the value of the type property
 spaceship.speed = 'Mach 5'; // Creates a new key of 'speed' with a value of 'Mach 5'
@@ -108,7 +110,7 @@ spaceship.passengers = [{name: 'Stuart'}]
 
 
 //Pass By Reference
-const spaceship1 = {
+  const spaceship1 = {
     homePlanet : 'Earth',
     color : 'silver'
   };
@@ -126,14 +128,15 @@ const spaceship1 = {
     homePlanet : 'Earth',
     color : 'red'
   };
+
   let tryReassignment = obj => {
     obj = {
       identified : false, 
       'transport type' : 'flying'
     }
     console.log(obj) // Prints {'identified': false, 'transport type': 'flying'}
-  
   };
+
   tryReassignment(spaceship2) // The attempt at reassignment does not work.
   spaceship2 // Still returns {homePlanet : 'Earth', color : 'red'};
   
@@ -148,25 +151,25 @@ const spaceship1 = {
 
   let spaceship3 = {
     crew: {
-    captain: { 
-        name: 'Lily', 
-        degree: 'Computer Engineering', 
-        cheerTeam() { console.log('You got this!') } 
-        },
-    'chief officer': { 
-        name: 'Dan', 
-        degree: 'Aerospace Engineering', 
-        agree() { console.log('I agree, captain!') } 
-        },
-    medic: { 
-        name: 'Clementine', 
-        degree: 'Physics', 
-        announce() { console.log(`Jets on!`) } },
-    translator: {
-        name: 'Shauna', 
-        degree: 'Conservation Science', 
-        powerFuel() { console.log('The tank is full!') } 
-        }
+      captain: { 
+          name: 'Lily', 
+          degree: 'Computer Engineering', 
+          cheerTeam() { console.log('You got this!') } 
+          },
+      'chief officer': { 
+          name: 'Dan', 
+          degree: 'Aerospace Engineering', 
+          agree() { console.log('I agree, captain!') } 
+          },
+      medic: { 
+          name: 'Clementine', 
+          degree: 'Physics', 
+          announce() { console.log(`Jets on!`) } },
+      translator: {
+          name: 'Shauna', 
+          degree: 'Conservation Science', 
+          powerFuel() { console.log('The tank is full!') } 
+          }
     }
   }; 
   // for...in
@@ -368,7 +371,7 @@ function robotFactory2(model, mobile){
 
   //or use:
   const { residence1 } = vampire; 
-console.log(residence); // Prints 'Transylvania'
+console.log(residence1); // Prints 'Transylvania'
 
 const { day } = vampire.preferences; 
 console.log(day); // Prints 'stay inside'
